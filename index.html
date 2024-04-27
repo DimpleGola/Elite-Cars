@@ -66,12 +66,26 @@
 
         }
 
+
         .course:hover {
 
             transform: matrix(1, -0.07, 0, 1, 0, 0);
 
 
             /* transform: skewY(0.5); */
+        }
+        
+
+        .super{
+            max-height: 100px;
+        }
+
+        .super:hover{
+            /* transform: scaleX(1.1);
+            padding-bottom: 200px; */
+        }
+        .super>span:hover{
+            display: block;
         }
 
         .course {
@@ -106,19 +120,22 @@
             background-color: rgba(0, 0, 0, 0.8);
         }
 
-        #Price{
+        .top{
             font-size: 50px;
             margin-bottom: 600px;
             border: 2px solid white;
             border-radius: 10px;
-            background-color: rgba(235, 245, 40, 0.8);
+           
+            background-color:  rgba(246, 53, 53,1);
+            
+            color: black;
+
         }
 
-        #names{
-
-            /* text-transform: uppercase; */
-        }
-
+        
+        #Price.text-animation {
+    transform: translateX(700px); /* Adjust the transform property for the names element */
+}
         @keyframes slideIn {
             from {
                 left: -200px;
@@ -138,7 +155,9 @@
 
 
         <div class="menu">
-            <div class="course" style="width: 500px; font-size: 35px;" id="close" onclick="Display()">SUPER CARS</div>
+            <div class="course super" style="width: 500px; font-size: 35px; text-wrap: wrap;" id="close" onclick="Display()">SUPER CARS<br><span style="font-size: 10px; line-height:0.2;display: none;" >Three people
+                 own the Rolls-Royce Boat Tail.one is owned by music power couple Jay-Z and Beyoncé. 
+                 The second is owned by Mauro Icardi, Argentine footballer and Galatasaray striker.</span></div>
             <div class="course" id="course1" onclick="Display(course1)">#1 Rolls-Royce</div>
             <div class="course" id="course2" onclick="Display(course2)">#2 Rolls-Royce</div>
             <div class="course" id="course3" onclick="Display()">#3 Bugatti</div>
@@ -152,9 +171,9 @@
 
 
         </div>
-        <h1 id="Price" class="text-animation"></h1>
+        <div class="text-animation top" id="Price"></div>
 
-
+      
         <h1 id="names" class="text-animation"></h1>
 
         <div class="gallery"></div>
@@ -176,7 +195,8 @@
                 case 'course1':
                     imageUrl = 'cars/img_228739_rolls-royce-la-rose-noire-droptail-2667px.jpg';
                     document.getElementById("names").innerHTML = "Rolls-Royce La Rose Noire DropTail";
-                    document.getElementById("Price").innerHTML = "$250Cr";
+                    document.getElementById("Price").innerText= "$250Cr";
+                    
 
                     break;
 
@@ -187,7 +207,7 @@
                     break;
 
                 case 'course3':
-                    imageUrl = 'cars/img_223191_bugatticentodieci_gettyimages-1452774090_bg.jpg';
+                    imageUrl = 'cars/img_223185_bugattilavoiturenoire_gettyimages-1197378645_bg.jpg';
                     document.getElementById("names").innerHTML = "Bugatti La Voiture Noire";
                     document.getElementById("Price").innerHTML = "$156Cr";
                     break;
@@ -238,6 +258,9 @@
                 case 'close':
                     imageUrl = 'cars/default5.webp';
                     document.getElementById("names").innerHTML = "Top 10 Most Expensive Cars";
+                    document.getElementById("Price").innerHTML = " ";
+                  
+
                     break;
 
 
